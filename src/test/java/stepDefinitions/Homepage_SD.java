@@ -13,6 +13,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.Homepage_PO;
+import utils.GenericUtils;
 import utils.TestBase;
 import utils.Variables;
 
@@ -48,22 +49,24 @@ public class Homepage_SD {
 		// Homepage_PO homepage_po = variables.pageObjectManager.gethomepage();
 		List<WebElement> list = homepage_po.listfooterlinks();
 
-		for (WebElement link : list) {
+//		for (WebElement link : list) {
+//
+//			String url = link.getAttribute("href");
+//
+//			HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
+//			conn.setRequestMethod("HEAD");
+//			conn.connect();
+//			int respCode = conn.getResponseCode();
+//			System.out.println(respCode);
+//			if (respCode > 400) {
+//
+//				System.out.println("The link with Text" + link.getText() + "is broken with code" + respCode);
+//				Assert.assertTrue(false);
+//			}
+//
+//		}
 
-			String url = link.getAttribute("href");
-
-			HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
-			conn.setRequestMethod("HEAD");
-			conn.connect();
-			int respCode = conn.getResponseCode();
-			System.out.println(respCode);
-			if (respCode > 400) {
-
-				System.out.println("The link with Text" + link.getText() + "is broken with code" + respCode);
-				Assert.assertTrue(false);
-			}
-
-		}
+		GenericUtils.verifybrokenLinks(list);
 
 	}
 

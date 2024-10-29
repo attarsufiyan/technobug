@@ -1,5 +1,2 @@
-/cucumberOptions/
-/features/
-/pageObjects/
-/stepDefinitions/
 /utils/
+/stepDefinitions/
