@@ -100,8 +100,6 @@ public class Homepage_PO {
 	public void clickNextPage() {
 		driver.findElement(nextPage).click();
 	}
-	
-	
 
 	// HttpURLConnection conn=(HttpURLConnection)new URL(url).openConnection();
 

@@ -13,6 +13,7 @@ public class PageObjectManager {
 	public studentRegistration_PO studentregister;
 	public educatorRegistration_PO educatorregister;
 	public courseInformation_PO courseInformation;
+	public studentMenu_PO studentmenu;
 
 	public PageObjectManager(WebDriver driver) {
 		this.driver = driver;
@@ -60,31 +61,26 @@ public class PageObjectManager {
 		}
 		return studentregister;
 	}
-	
+
 	public educatorRegistration_PO geteducatorRegister() {
 		if (educatorregister == null) {
 			educatorregister = new educatorRegistration_PO(driver);
 		}
 		return educatorregister;
 	}
-	
-	
+
 	public courseInformation_PO getcourseInformation() {
 		if (courseInformation == null) {
 			courseInformation = new courseInformation_PO(driver);
 		}
 		return courseInformation;
 	}
-	//courseInformation_PO courseInformation=new courseInformation_PO();
-	
-	
+
+	public studentMenu_PO getstudentMenu() {
+		if (studentmenu == null) {
+			studentmenu = new studentMenu_PO(driver);
+		}
+		return studentmenu;
+	}
+
 }
-
-// studentRegistration_PO studentregister new studentRegistration_PO();
-
-//educatorRegistration_PO educatorregister new educatorRegistration_PO();
-
-
-
-
-
