@@ -114,18 +114,19 @@ public class Homepage_SD {
 
 	@Then("verfiy that all the category link on the homepage")
 	public void verifycatgeorylink() throws MalformedURLException, IOException {
-		
-		List<WebElement> list=homepage_po.getCategory();
+
+		List<WebElement> list = homepage_po.getCategory();
 		GenericUtils.verifybrokenLinks(list);
-		
 
 	}
+
 	@Then("click on student menu")
 	public void studentMenu() throws InterruptedException {
-		//WebElement student=variables.driver.findElement(By.cssSelector(".css-1y1k3rb"));
+		// WebElement
+		// student=variables.driver.findElement(By.cssSelector(".css-1y1k3rb"));
 		GenericUtils.actionMethod(variables.driver, By.cssSelector(".css-1y1k3rb"));
 		Thread.sleep(2000);
-		
+
 	}
 
 }
