@@ -6,6 +6,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
@@ -13,6 +14,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.Homepage_PO;
+import utils.GenericUtils;
 import utils.TestBase;
 import utils.Variables;
 
@@ -48,22 +50,24 @@ public class Homepage_SD {
 		// Homepage_PO homepage_po = variables.pageObjectManager.gethomepage();
 		List<WebElement> list = homepage_po.listfooterlinks();
 
-		for (WebElement link : list) {
+//		for (WebElement link : list) {
+//
+//			String url = link.getAttribute("href");
+//
+//			HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
+//			conn.setRequestMethod("HEAD");
+//			conn.connect();
+//			int respCode = conn.getResponseCode();
+//			System.out.println(respCode);
+//			if (respCode > 400) {
+//
+//				System.out.println("The link with Text" + link.getText() + "is broken with code" + respCode);
+//				Assert.assertTrue(false);
+//			}
+//
+//		}
 
-			String url = link.getAttribute("href");
-
-			HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
-			conn.setRequestMethod("HEAD");
-			conn.connect();
-			int respCode = conn.getResponseCode();
-			System.out.println(respCode);
-			if (respCode > 400) {
-
-				System.out.println("The link with Text" + link.getText() + "is broken with code" + respCode);
-				Assert.assertTrue(false);
-			}
-
-		}
+		GenericUtils.verifybrokenLinks(list);
 
 	}
 
@@ -106,6 +110,22 @@ public class Homepage_SD {
 		}
 		Thread.sleep(2000);
 
+	}
+
+	@Then("verfiy that all the category link on the homepage")
+	public void verifycatgeorylink() throws MalformedURLException, IOException {
+		
+		List<WebElement> list=homepage_po.getCategory();
+		GenericUtils.verifybrokenLinks(list);
+		
+
+	}
+	@Then("click on student menu")
+	public void studentMenu() throws InterruptedException {
+		//WebElement student=variables.driver.findElement(By.cssSelector(".css-1y1k3rb"));
+		GenericUtils.actionMethod(variables.driver, By.cssSelector(".css-1y1k3rb"));
+		Thread.sleep(2000);
+		
 	}
 
 }
