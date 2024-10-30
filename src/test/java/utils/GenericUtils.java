@@ -11,6 +11,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -40,8 +41,8 @@ public class GenericUtils {
 		jsExecutor.executeScript("window.scrollBy(arguments[0], arguments[1]);", x, y);
 	}
 
+	// Method for broken links
 	public static void verifybrokenLinks(List<WebElement> lists) throws MalformedURLException, IOException {
-
 
 		for (WebElement link : lists) {
 
@@ -57,10 +58,17 @@ public class GenericUtils {
 				System.out.println("The link with Text" + link.getText() + "is broken with code" + respCode);
 				Assert.assertTrue(false);
 			}
-	
+
 		}
 	}
-	
-}
-	
 
+	
+	public static void actionMethod(WebDriver driver, By locator) {
+
+		Actions actions = new Actions(driver);
+		WebElement element = driver.findElement(locator);
+		actions.moveToElement(element).perform();
+
+	}
+
+}

@@ -6,6 +6,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
@@ -109,6 +110,22 @@ public class Homepage_SD {
 		}
 		Thread.sleep(2000);
 
+	}
+
+	@Then("verfiy that all the category link on the homepage")
+	public void verifycatgeorylink() throws MalformedURLException, IOException {
+		
+		List<WebElement> list=homepage_po.getCategory();
+		GenericUtils.verifybrokenLinks(list);
+		
+
+	}
+	@Then("click on student menu")
+	public void studentMenu() throws InterruptedException {
+		//WebElement student=variables.driver.findElement(By.cssSelector(".css-1y1k3rb"));
+		GenericUtils.actionMethod(variables.driver, By.cssSelector(".css-1y1k3rb"));
+		Thread.sleep(2000);
+		
 	}
 
 }

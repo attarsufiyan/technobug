@@ -18,7 +18,7 @@ Examples:
 | Information Technology | Software Development | Redux                                  |  enroll    |student58@student.com | studentpassword | enroll       |                                                      
 
 
-#---------------------------------------------------------------------------------------------#
+#------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
 @browse
 Scenario Outline: User will serach the course by selecting the Category and Sub-Category
@@ -38,11 +38,29 @@ Examples:
  |student59@student.com | studentpassword | Information Technology | IT Infrastructure    | IT Support and Networking Essentials   |  enroll |   
  |student59@student.com | studentpassword | Information Technology | Software Development | Redux                                  |  enroll |                                                    
 
-
+#------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
 
 @Brokenlinks
-Scenario: Check weather there is borken link on hmomepage or not.
+Scenario: Check weather there is borken link on homepage footer or not
 
 Given user will enter the url and land on homepage
-Then verfiy that all the links present on the homepage
+Then verfiy that all the links present on the homepage footer
+
+
+@studentmenu
+Scenario: Check weather there is borken link on homepage footer or not
+
+Given user will enter the url and land on homepage
+When user will click on SignIn
+Then user will select on I am student
+Then student will enter <Email> and <Password> and click on sigin button
+Then click on student menu
+
+Examples:
+ | Email                | Password        |
+ |student59@student.com | studentpassword |
+
+
+
+

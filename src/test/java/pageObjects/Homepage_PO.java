@@ -22,6 +22,7 @@ public class Homepage_PO {
 	By subcategory = By.cssSelector(".css-9ajahe");
 	By courseList = By.cssSelector(".css-1sty9pu strong");
 	By nextPage = By.cssSelector("button[title='Go to next page']");
+	By studentMenu = By.cssSelector(".css-1y1k3rb");
 
 	public void clickSignIn() {
 
@@ -80,12 +81,12 @@ public class Homepage_PO {
 	}
 
 	public void clickCourse(String courseName) {
-        WebElement course = getCourseName(courseName);
-        if (course != null) {
-            course.click();
-        } else {
-            throw new RuntimeException("Course not found: " + courseName);
-        }
+		WebElement course = getCourseName(courseName);
+		if (course != null) {
+			course.click();
+		} else {
+			throw new RuntimeException("Course not found: " + courseName);
+		}
 	}
 
 	public WebElement getCourseName(String courseName) {
@@ -99,6 +100,7 @@ public class Homepage_PO {
 	public void clickNextPage() {
 		driver.findElement(nextPage).click();
 	}
+	
 	
 
 	// HttpURLConnection conn=(HttpURLConnection)new URL(url).openConnection();
