@@ -1,7 +1,7 @@
 Feature: Student will Enter the credentials and login to the application.
 #--------------------------------------------------------------------------------------------#
 
-@RegressionSuite
+@Sample
 Scenario Outline: Student will enter credentials   Login
 
 Given user will enter the url and land on homepage

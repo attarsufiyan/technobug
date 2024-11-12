@@ -28,6 +28,7 @@ Then user will select on I am student
 Then student will enter <Email> and <Password> and click on sigin button
 Then click on student menu
 And click on Dasboard
+Then check the Enrolled Cousre number
 
 
 Examples:
