@@ -14,6 +14,7 @@ public class PageObjectManager {
 	public educatorRegistration_PO educatorregister;
 	public courseInformation_PO courseInformation;
 	public studentMenu_PO studentmenu;
+	public Dashbaord_PO dashbaord;
 
 	public PageObjectManager(WebDriver driver) {
 		this.driver = driver;
@@ -82,5 +83,14 @@ public class PageObjectManager {
 		}
 		return studentmenu;
 	}
+
+	public Dashbaord_PO getDashboard() {
+		if (dashbaord == null) {
+			dashbaord = new Dashbaord_PO(driver);
+		}
+		return dashbaord;
+	}
+
+	// Dashbaord_PO dashbaord=new Dashbaord_PO();
 
 }

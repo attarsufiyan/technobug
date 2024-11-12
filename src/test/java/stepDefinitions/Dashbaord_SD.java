@@ -1,22 +1,23 @@
 package stepDefinitions;
 
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
 import pageObjects.studentMenu_PO;
 import utils.Variables;
 
-public class studentMenu_SD {
+public class Dashbaord_SD {
 
 	Variables variables;
 
 	studentMenu_PO studentmenu;
 
-	public studentMenu_SD(Variables variables) {
+	public Dashbaord_SD(Variables variables) {
 
 		this.variables = variables;
 		this.studentmenu = variables.pageObjectManager.getstudentMenu();
 	}
 	
-	@And("click on Dashboard")
+	@And("click on Dasboard")
 	public void clickOnDashbaord() throws InterruptedException {
 		
 		studentmenu.clickDashboard();
@@ -24,7 +25,12 @@ public class studentMenu_SD {
 		
 	}
 	
-	
+	@Then("check the Enrolled Cousre number")
+	public void countEnrolledCourse() {
+		
+		
+		
+	}
 	
 
 }
