@@ -45,8 +45,8 @@ Then educator will enter <Email> and click on sigin
 Then  the <Message> message should display
 
 Examples:
-| Email               | Message                             |
-| student@student.com |Both Email and Password are required |
+| Email                     | Message                             |
+| sufiyanattar183@gmail.com |Both Email and Password are required |
 
 
 
