@@ -35,8 +35,8 @@ Then user will click on enroll dropdown and select <option>
 
 Examples:
  | Email                | Password        | Category               | subcategory          | cousreName                             |  option |  
- |student59@student.com | studentpassword | Information Technology | IT Infrastructure    | IT Support and Networking Essentials   |  enroll |   
- |student59@student.com | studentpassword | Information Technology | Software Development | Redux                                  |  enroll |                                                    
+ |student@student.com | studentpassword | Information Technology | IT Infrastructure    | IT Support and Networking Essentials   |  enroll |   
+ |student@student.com | studentpassword | Information Technology | Software Development | Redux                                  |  enroll |                                                    
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
@@ -59,7 +59,7 @@ Then click on student menu
 
 Examples:
  | Email                | Password        |
- |student59@student.com | studentpassword |
+ |student@student.com | studentpassword |
 
 
 

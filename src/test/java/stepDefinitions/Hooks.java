@@ -5,8 +5,11 @@ import java.io.IOException;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
 
 import io.cucumber.java.After;
 import io.cucumber.java.AfterStep;
@@ -19,6 +22,7 @@ import utils.Variables;
 public class Hooks {
 
 	Variables variables;
+	ExtentTest test;
 
 	public Hooks(Variables variables) {
 		this.variables = variables;
@@ -47,6 +51,10 @@ public class Hooks {
             File sourcepath = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);  // Corrected interface name
             byte[] filecontent = FileUtils.readFileToByteArray(sourcepath);
             scenario.attach(filecontent, "image/png", "image");
+            
+            
+            test.addScreenCaptureFromPath(sourcepath.getAbsolutePath());
+            test.log(Status.FAIL, "Step failed: " + scenario.getName());
         }
 
 	}
