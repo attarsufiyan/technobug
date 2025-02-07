@@ -13,9 +13,9 @@ Then user will click on enroll dropdown and select <option>
 
 
 Examples:
-|  Email                 | Password        | Category             | subcategory          | cousreName                                                    | option             |                           
-|  student@student.com | studentpassword | Information Technology | IT Infrastructure    | Learn Servers OSs and Types  Server Administration Course     | start subscription |
-|  student@student.com | studentpassword | Information Technology | IT Infrastructure    | Storage in Cloud                                              | enroll             |
+|  Email                | Password        | Category             | subcategory          | cousreName                                                    | option             |                           
+|  student@student.com | studentpassword | Information Technology | IT Infrastructure    | IT Support & Network Essentials                               | start subscription |
+|  student@student.com | studentpassword | Information Technology | IT Infrastructure    | IT Support & Network Essentials                               | enroll             |
 
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------------#
 
