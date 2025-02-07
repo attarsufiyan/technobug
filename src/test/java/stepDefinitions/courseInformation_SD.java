@@ -32,8 +32,9 @@ public class courseInformation_SD {
             WebElement startLearning = variables.driver.findElement(By.xpath("//*[text()='Click here to start learning']"));
             startLearning.click();
         } else {
-            courseInformation.clickEnrollDropDown();
-            courseInformation.selectOptionFromDropdown(option);
+//            courseInformation.clickEnrollDropDown();
+//            courseInformation.selectOptionFromDropdown(option);
+        	  courseInformation.clickOnEnrollFree();
         }
     }
 

@@ -46,19 +46,19 @@ public class instituteLogin_SD {
 
 	}
 
-	@Then("institute will click on siginbutton without entering credentials")
-	public void institute_will_click_on_siginbutton_without_entering_credentials() {
-
-		instituteLogin_PO institutelogin = variables.pageObjectManager.instituteLogin();
-		institutelogin.siginInButton();
-
-	}
-
 	@Then("^institute will enter (.+) and click on sigin$")
 	public void institute_will_enter_email_only(String email) {
 
 		instituteLogin_PO institutelogin = variables.pageObjectManager.instituteLogin();
 		institutelogin.enterEmail(email);
+		institutelogin.siginInButton();
+
+	}
+
+	@Then("institute will click on siginbutton without entering credentials")
+	public void institute_will_click_on_siginbutton_without_entering_credentials() {
+
+		instituteLogin_PO institutelogin = variables.pageObjectManager.instituteLogin();
 		institutelogin.siginInButton();
 
 	}

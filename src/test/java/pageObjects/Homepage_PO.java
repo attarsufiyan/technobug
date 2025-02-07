@@ -16,7 +16,7 @@ public class Homepage_PO {
 
 	}
 
-	By clickSiginIn = By.cssSelector(".css-1scstjv");
+	By clickSiginIn = By.cssSelector(".css-bje4zh");
 	By footerlinks = By.cssSelector("li[class=\"footer-links__item\"] a");
 	By category = By.cssSelector(".css-9ajahe");
 	By subcategory = By.cssSelector(".css-9ajahe");
