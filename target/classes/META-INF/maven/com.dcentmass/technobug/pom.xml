@@ -74,10 +74,7 @@
 			<artifactId>slf4j-simple</artifactId>
 			<version>1.7.36</version> <!-- or the latest version -->
 		</dependency>	
-
-
 	</dependencies>
-
 
 	<build>
 		<plugins>
